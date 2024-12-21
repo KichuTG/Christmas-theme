@@ -22,7 +22,7 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+                    InlineKeyboardButton('🎄 ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ 🎄', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton('✢ ᴏᴡɴᴇʀ ✢', callback_data="owner_info"),
                     InlineKeyboardButton('✢ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ✢', url=f"https://t.me/{SUPPORT_CHAT}")
@@ -45,7 +45,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+                    InlineKeyboardButton('🎄 ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ 🎄', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton('✢ ᴏᴡɴᴇʀ ✢', callback_data="owner_info"),
                     InlineKeyboardButton('✢ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ✢', url=f"https://t.me/{SUPPORT_CHAT}")
@@ -93,7 +93,7 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+                    InlineKeyboardButton('🎄 ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ 🎄', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton('✢ ᴏᴡɴᴇʀ ✢', callback_data="owner_info"),
                     InlineKeyboardButton('✢ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ✢', url=f"https://t.me/{SUPPORT_CHAT}")
@@ -141,7 +141,7 @@ async def start(client, message):
                 file_id=file.file_id,
                 caption=f_caption,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/ckflicks") ] ] ),
+                reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/AM_FILMS") ] ] ),
             )
         return
     
@@ -177,7 +177,7 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/ckflicks") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/AM_FILMS") ] ] ),
                     
                 )
             except FloodWait as e:
@@ -188,7 +188,7 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/ckflicks") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/AM_FILMS") ] ] ),
                 )
             except Exception as e:
                 logger.warning(e, exc_info=True)
@@ -250,7 +250,7 @@ async def start(client, message):
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/ckflicks") ] ] ),
+                reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/AM_FILMS") ] ] ),
             )
             filetype = msg.media
             file = getattr(msg, filetype.value)
@@ -284,7 +284,7 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/ckflicks") ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⎋ BOT 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⎋', url="https://t.me/AM_FILMS") ] ] ),
     )
                     
 
