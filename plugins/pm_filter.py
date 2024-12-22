@@ -39,9 +39,6 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-sticker_message = await message.reply_sticker("CAACAgQAAxkBAAENXzJnZ5_pSJe-hfuSYUQuQ7-2M-nMXgAC5BQAApZLaFCRBOz13yIu0DYE")
-    await asyncio.sleep(2)
-    await sticker_message.delete()
     if message.chat.id != SUPPORT_CHAT_ID:
         glob = await global_filters(client, message)
         if glob == False:
@@ -67,9 +64,6 @@ sticker_message = await message.reply_sticker("CAACAgQAAxkBAAENXzJnZ5_pSJe-hfuSY
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pv_filter(client, message):
-sticker_message = await message.reply_sticker("CAACAgQAAxkBAAENXzJnZ5_pSJe-hfuSYUQuQ7-2M-nMXgAC5BQAApZLaFCRBOz13yIu0DYE")
-    await asyncio.sleep(2)
-    await sticker_message.delete()
     kd = await global_filters(client, message)
     if kd == False:
         await auto_filter(client, message)
