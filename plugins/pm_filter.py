@@ -54,16 +54,16 @@ async def give_filter(client, message):
                     settings = await get_settings(message.chat.id)
                     if settings['auto_ffilter']:
                         await auto_filter(client, message)
-    else: #a better logic to avoid repeated lines of code in auto_filter function
+    else:  # A better logic to avoid repeated lines of code in auto_filter function
         search = message.text
         temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
-         if total_results == 0:
+        if total_results == 0:
             return
         else:
             # Send and delete a sticker
-            sticker = await message.reply_sticker(sticker="sticker_id")
-            await sleep(2)
-            await sticker.delete()
+            sticker = await message.reply_sticker(sticker="sticker_id")  # Replace "sticker_id" with the actual ID
+            await sleep(2)  # Sleep for 2 seconds
+            await sticker.delete()  # Delete the sticker
             
             return await message.reply_text(f"<b>👋 𝖧𝖾𝗒 {message.from_user.mention} \n📁 {str(total_results)} 𝖱𝖾𝗌𝗎𝗅𝗍𝗌 𝖺𝗋𝖾 𝖿𝗈𝗎𝗇𝖽 𝖿𝗈𝗋 𝗒𝗈𝗎𝗋 𝗊𝗎𝖾𝗋𝗒 {search}.\n\nKindly ask movies and series here ⬇\n@blaster_arena & @blaster_movies</b>")
 
