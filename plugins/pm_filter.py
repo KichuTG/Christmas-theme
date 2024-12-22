@@ -61,7 +61,7 @@ async def give_filter(client, message):
             return
         else:
             # Send and delete a sticker
-            sticker = await message.reply_sticker(sticker="sticker_id")  # Replace "sticker_id" with the actual ID
+            sticker = await message.reply_sticker(sticker="CAACAgQAAxkBAAENXztnZ8DgxTDtXJ5YaSMhlCySiyzjHAAC1REAAqXq2VPT8nJumdJaaDYE")  # Replace "sticker_id" with the actual ID
             await sleep(2)  # Sleep for 2 seconds
             await sticker.delete()  # Delete the sticker
             
@@ -72,7 +72,7 @@ async def pv_filter(client, message):
     kd = await global_filters(client, message)
       if kd == False:
         # Send and delete a sticker
-        sticker = await message.reply_sticker(sticker="CAACAgQAAxkBAAENXzJnZ5_pSJe-hfuSYUQuQ7-2M-nMXgAC5BQAApZLaFCRBOz13yIu0DYE")
+        sticker = await message.reply_sticker(sticker="CAACAgQAAxkBAAENXztnZ8DgxTDtXJ5YaSMhlCySiyzjHAAC1REAAqXq2VPT8nJumdJaaDYE")
         await sleep(2)
         await sticker.delete()
         
