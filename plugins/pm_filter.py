@@ -57,11 +57,11 @@ async def give_filter(client, message):
     else: #a better logic to avoid repeated lines of code in auto_filter function
         search = message.text
         temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
-        if total_results == 0:
+         if total_results == 0:
             return
-    else:
+        else:
             # Send and delete a sticker
-            sticker = await message.reply_sticker(sticker="CAACAgQAAxkBAAENXzJnZ5_pSJe-hfuSYUQuQ7-2M-nMXgAC5BQAApZLaFCRBOz13yIu0DYE")
+            sticker = await message.reply_sticker(sticker="sticker_id")
             await sleep(2)
             await sticker.delete()
             
