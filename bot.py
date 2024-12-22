@@ -61,11 +61,6 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         logging.info("Bot stopped. Bye.")
-
-    async def some_function():
-    print("Start")
-    await asyncio.sleep(2)  # Correct indentation
-    print("End")
     
     async def iter_messages(
         self,
