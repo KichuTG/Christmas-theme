@@ -70,7 +70,13 @@ async def give_filter(client, message):
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pv_filter(client, message):
     kd = await global_filters(client, message)
-    if kd == False:
+      if kd == False:
+        # Send and delete a sticker
+        sticker = await message.reply_sticker(sticker="CAACAgQAAxkBAAENXzJnZ5_pSJe-hfuSYUQuQ7-2M-nMXgAC5BQAApZLaFCRBOz13yIu0DYE")
+        await sleep(2)
+        await sticker.delete()
+        
+        await auto_filter(client, message)
         await auto_filter(client, message)
 
 @Client.on_callback_query(filters.regex(r"^next"))
